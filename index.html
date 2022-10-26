@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Linking to external CSS file -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+    <title>Vue App</title>
+  </head>
+  <body>
+    <div id="App">
+      <!-- div to create container to list subjects -->
+      <div class="subject">
+        <!-- Accessing data stored in Vue object -->
+        <p>Subject: {{ subjects.subject }}</p>
+        <p>Location: {{ subjects.location }}</p>
+        <p>Price: £{{ subjects.price }}</p>
+        <p>Spaces: {{ subjects.spaces }}</p>
+
+        <!-- Adding image with path and alt stored in data -->
+        <img class="img" v-bind:src="path"  v-bind:alt="text" style="height: 100px">
+        <!-- Creating button to call method on event to decrease space amount by 1 -->
+        <button id="addtoCartBtn" v-on:click="decrementSpaces()">
+          Add to cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Linking to external javascript file -->
+    <script src="app.js"></script>
+  </body>
+</html>
